@@ -1,29 +1,26 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, Button} from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 
 export default function Home() {
 
     const navigation = useNavigation();
-    function irSobre() {
-        navigation.navigate('Sobre', {
-            nome: 'Caio',
-            email: 'caio@unipam.edu.br'
-        });
-    }
 
     return(
-        <View>
+        <View style={styles.container}>
             <Text>Home</Text>
-            <Text>Conteudo Inicial</Text>
             <Button
-                title='Sobre'
-                onPress={irSobre}
-            />
-            <Button
-                title='Informações'
-                onPress={() => navigation.navigate('Info')}
+            title='Contato'
+            onPress={() => navigation.navigate('Contato')}
             />
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+})
