@@ -13,6 +13,10 @@ export default function Home() {
             title='Contato'
             onPress={() => navigation.navigate('Contato')}
             />
+            <Button
+            title='Abrir Menu'
+            onPress={() => navigation.toggleDrawer()}
+            />
         </View>
     );
 }
